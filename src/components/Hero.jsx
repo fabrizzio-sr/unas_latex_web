@@ -69,8 +69,8 @@ export const Hero = ({ onOpenDownload }) => {
               </div>
 
               <div className="paper-logos-row">
-                <img src="/unas.png" alt="UNAS" className="paper-logo" />
-                <img src="/fiis_unas.jpg" alt="FIIS" className="paper-logo" />
+                <img src={`${import.meta.env.BASE_URL}unas.png`} alt="UNAS" className="paper-logo" />
+                <img src={`${import.meta.env.BASE_URL}fiis_unas.jpg`} alt="FIIS" className="paper-logo" />
               </div>
 
               <div className="paper-title-block">

@@ -62,7 +62,7 @@ export const Footer = () => {
         {/* Barra inferior del pie de página */}
         <div className="footer-bottom">
           <div className="footer-brand-wrap">
-            <img src="/unas.png" alt="UNAS" className="footer-logo" />
+            <img src={`${import.meta.env.BASE_URL}unas.png`} alt="UNAS" className="footer-logo" />
             <div>
               <span className="footer-univ">Universidad Nacional Agraria de la Selva</span>
               <p className="footer-sub">Tingo María, Huánuco – Perú</p>

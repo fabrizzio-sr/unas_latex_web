@@ -17,7 +17,7 @@ export const Navbar = ({ onOpenDownload }) => {
     <header className={`navbar-wrapper ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-container">
         <a href="#" className="navbar-brand">
-          <img src="/unas.png" alt="Escudo UNAS" className="navbar-logo" />
+          <img src={`${import.meta.env.BASE_URL}unas.png`} alt="Escudo UNAS" className="navbar-logo" />
           <div className="navbar-brand-text">
             <span className="brand-title">UNAS LaTeX PPP</span>
             <span className="brand-subtitle">Facultad de Ingeniería en Informática y Sistemas</span>
