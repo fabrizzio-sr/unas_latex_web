@@ -112,54 +112,93 @@
   margin-bottom: 0.2rem;
 }
 
-.modal-command-section {
+.modal-release-section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.command-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.command-box {
+.release-download-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-code);
-  padding: 0.65rem 1rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(21, 76, 46, 0.08), rgba(21, 76, 46, 0.03));
+  border: 1.5px solid rgba(21, 76, 46, 0.25);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  gap: 1rem;
 }
 
-.command-box code {
-  font-family: var(--font-mono);
-  font-size: 0.825rem;
-  color: #a7f3d0;
-  word-break: break-all;
+.release-download-card:hover {
+  background: linear-gradient(135deg, rgba(21, 76, 46, 0.14), rgba(21, 76, 46, 0.06));
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(21, 76, 46, 0.12);
 }
 
-.command-copy-btn {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: var(--text-white);
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: 500;
-  cursor: pointer;
+.release-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.release-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-dark);
+  background: rgba(21, 76, 46, 0.1);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  width: fit-content;
 }
 
-.command-copy-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.release-badge i {
+  font-size: 0.65rem;
+}
+
+.release-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.release-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.release-subtext {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.release-action-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 10px rgba(14, 48, 29, 0.2);
+}
+
+.release-download-card:hover .release-action-btn {
+  background: var(--primary-light);
+  transform: translateY(2px);
+  box-shadow: 0 6px 14px rgba(14, 48, 29, 0.3);
 }
 
 .modal-instructions h4 {

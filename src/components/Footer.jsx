@@ -76,7 +76,7 @@ export const Footer = () => {
             <a href="https://fiis.unas.edu.pe" target="_blank" rel="noopener noreferrer">
               <i className="fa-solid fa-graduation-cap"></i> Portal FIIS
             </a>
-            <a href="https://github.com/fabrzzo/informe_ppp" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/fabrizzio-sr/unas_latex_ppp" target="_blank" rel="noopener noreferrer">
               <i className="fa-brands fa-github"></i> Repositorio GitHub
             </a>
           </div>

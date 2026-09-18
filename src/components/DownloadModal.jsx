@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './DownloadModal.css';
 
 export const DownloadModal = ({ isOpen, onClose }) => {
-  const [copied, setCopied] = useState(false);
-
   if (!isOpen) return null;
 
-  const cloneCommand = 'git clone https://github.com/fabrzzo/informe_ppp.git';
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(cloneCommand);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const repoUrl = 'https://github.com/fabrizzio-sr/unas_latex_ppp';
+  const latestReleaseUrl = 'https://github.com/fabrizzio-sr/unas_latex_ppp/releases/latest';
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -24,7 +17,7 @@ export const DownloadModal = ({ isOpen, onClose }) => {
             </div>
             <div>
               <h3 className="modal-title">Descarga de la Plantilla</h3>
-              <p className="modal-subtitle">Versión 1.0 • Motor LuaLaTeX</p>
+              <p className="modal-subtitle">Versión Oficial • Motor LuaLaTeX</p>
             </div>
           </div>
           <button className="modal-close-btn" onClick={onClose} aria-label="Cerrar ventana">
@@ -36,23 +29,35 @@ export const DownloadModal = ({ isOpen, onClose }) => {
           <div className="modal-info-box">
             <i className="fa-solid fa-circle-info"></i>
             <div>
-              <strong>Acceso a la Plantilla</strong>
+              <strong>Distribución Oficial</strong>
               <p>
-                La plantilla se distribuye a través del repositorio de código abierto. Puedes clonarla mediante Git o
-                copiar directamente la carpeta 'plantilla/' en tu entorno local.
+                La plantilla se distribuye empaquetada a través de los releases oficiales en GitHub.
+                Descarga el archivo comprimido (.zip) listo para usar, sin necesidad de comandos de Git.
               </p>
             </div>
           </div>
 
-          <div className="modal-command-section">
-            <label className="command-label">Comando de Clonación Rápida con Git:</label>
-            <div className="command-box">
-              <code>{cloneCommand}</code>
-              <button className="command-copy-btn" onClick={handleCopy}>
-                <i className={`fa-solid ${copied ? 'fa-check text-green' : 'fa-copy'}`}></i>
-                <span>{copied ? 'Copiado' : 'Copiar'}</span>
-              </button>
-            </div>
+          <div className="modal-release-section">
+            <a
+              href={latestReleaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="release-download-card"
+            >
+              <div className="release-card-content">
+                <div className="release-badge">
+                  <i className="fa-solid fa-tag"></i>
+                  <span>Último Release</span>
+                </div>
+                <div className="release-title-row">
+                  <span className="release-title">Descargar Plantilla (.zip)</span>
+                  <span className="release-subtext">Código fuente limpio, scripts y ejemplos listos para compilar</span>
+                </div>
+              </div>
+              <div className="release-action-btn">
+                <i className="fa-solid fa-arrow-down"></i>
+              </div>
+            </a>
           </div>
 
           <div className="modal-instructions">
@@ -61,13 +66,16 @@ export const DownloadModal = ({ isOpen, onClose }) => {
             </h4>
             <ol>
               <li>
-                <strong>Abrir la carpeta:</strong> Abre la carpeta 'plantilla/' en Visual Studio Code o tu editor preferido.
+                <strong>Descargar y descomprimir:</strong> Obtén el archivo ZIP del último release y extráelo en tu computadora.
               </li>
               <li>
-                <strong>Personalizar:</strong> Edita 'config/metadata.tex' con tus datos y 'config/opciones.tex' para tus secciones.
+                <strong>Abrir el proyecto:</strong> Abre la carpeta descomprimida en Visual Studio Code o tu editor preferido.
               </li>
               <li>
-                <strong>Compilar:</strong> Abre una terminal de PowerShell y ejecuta <code>.\compile.ps1</code>.
+                <strong>Personalizar:</strong> Edita <code>config/metadata.tex</code> con tus datos y <code>config/opciones.tex</code> para tus secciones.
+              </li>
+              <li>
+                <strong>Compilar:</strong> Abre una terminal de PowerShell en la raíz del proyecto y ejecuta <code>.\compile.ps1</code>.
               </li>
             </ol>
           </div>
@@ -77,17 +85,27 @@ export const DownloadModal = ({ isOpen, onClose }) => {
           <button className="btn btn-secondary btn-sm" onClick={onClose}>
             <span>Cerrar</span>
           </button>
-          <a 
-            href="https://github.com/fabrzzo/informe_ppp" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-primary btn-sm"
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary btn-sm"
           >
             <i className="fa-brands fa-github"></i>
-            <span>Ver en GitHub</span>
+            <span>Ver Repositorio</span>
+          </a>
+          <a
+            href={latestReleaseUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-sm"
+          >
+            <i className="fa-solid fa-download"></i>
+            <span>Ir al Release</span>
           </a>
         </div>
       </div>
     </div>
   );
 };
+

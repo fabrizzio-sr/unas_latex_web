@@ -19,7 +19,7 @@ export const QuickStart = ({ onOpenDownload }) => {
         </div>
 
         <div className="steps-container">
-          {stepsData.map((step, index) => (
+          {stepsData.map((step) => (
             <div key={step.stepNumber} className="step-card">
               <div className="step-number-badge">
                 <span>{step.stepNumber}</span>
